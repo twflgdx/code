@@ -1,0 +1,81 @@
+int main()
+{
+	int num=5;
+	int age=10;
+	if(age<10)
+		printf("children");//若只有一个if语句，无else，若条件不满足，则输出的为空语句
+	else
+		printf("teenage");
+	
+
+	
+	//if(18<=age<25)// 不能连续表达，这些是关系运算符，左结合.首先会是执行"18<=age",若真则为1，假则为0，然后再执行"'  '<25"。
+	if(age>=18 && age<25)//正确表达方式应是用逻辑与
+		printf("adult");
+	else
+		printf("children");
+	
+
+	//if多语句
+	
+		/*if(age<18)
+			printf("children\n");
+		else if(age>=18 && age<28)
+		    printf("adult\n");
+		else if(age>=28 && age<40)
+			printf("middle-aged person\n");
+		else if(age>=40 && age<90)
+			printf("older\n");
+		else if(age>=90)
+			printf("monster\n");*/
+	if(age<18)
+	{
+			printf("children\n");
+	        printf("1");
+	}//如果条件成立，要执行多条语句，应该使用代码块。这里一对{}就是一个代码块.
+		else
+		{
+			if(age>=18 && age<28)
+		    printf("adult\n");
+		else if(age>=28 && age<40)
+			printf("middle-aged person\n");
+		else if(age>=40 && age<90)
+			printf("older\n");
+		else if(age>=90)
+			printf("monster\n");
+	}
+
+
+
+	//int a=0;
+	//int b=2;
+	//if(a==1)//第一个if语句就判断为假，输出空语句，后面的else与第二个if相匹配,
+	//	//但若第一个if后面有分号，结果不一样
+	//	if(b==2)
+	//		printf("hehe\n");
+	//    else//else有就近原则
+	//		printf("haha\n");
+
+
+
+	//if(condition)
+	//{
+	//	return x;
+	//}
+	//return y;//这种方式正确，但不管直白，可读性差点
+
+    /*可以后面改为
+	else
+	{
+		return y;
+	}*/
+
+
+	//int num=5;
+	if(5==num)//注意==（左结合）与=（右结合）的区别
+	//if(num=5)
+	{
+		printf("hehe\n");
+	}
+    return 0;
+}
