@@ -1,0 +1,25 @@
+//2023/05/15    .dat并非标准文件，有两种类型，一是纯文本文件，二是多媒体影像文件
+int main()
+{
+	char ch='a';
+	int grade=90;
+	FILE * file_point;
+	file_point=fopen("d:\\C语言\\C_code\\程序文档.dat","wb");
+	fwrite(&ch,1,1,file_point);
+	fwrite(&grade,4,1,file_point);
+	fclose(file_point);
+	return 0;
+}
+
+int main()//fread函数实现从文件缓冲区将二进制文件中的数据读给变量
+{
+	char ch;
+	int grade;
+	FILE * file_point;
+	file_point=fopen("d:\\c语言\\c_code\\程序文档.dat","rb");
+	fread(&ch,1,1,file_point);
+	fread(&grade,4,1,file_point);
+	fclose(file_point);
+	printf("ch=%c,grade=%d\n",ch,grade);
+	return 0;
+}
