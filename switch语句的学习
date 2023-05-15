@@ -1,0 +1,81 @@
+# code//2023/05/15 :switch语句的学习
+int main()
+{
+	int day=0;
+	scanf("%d",&day);
+	switch(day)//括号里是整形表达式，与if语句相似：switch下多个case多语句需要大括号{}括起来
+	{
+		case 1://case 后面接的是整型常量表达式
+		    printf("星期一\n");
+			break;
+		case 2:
+		    printf("星期二\n");
+			break;
+		case 3:
+		    printf("星期三\n");
+			break;
+		case 4:
+		    printf("星期四\n");
+			break;
+		case 5:
+		    printf("星期五\n");
+			break;
+		case 6:
+		    printf("星期六\n");
+			break;
+		case 7:
+		    printf("星期日\n");
+			break;
+		default://每个switch语句中只能出现一条default子句，但是可以出现在语句列表中的任何位置
+			printf("输入错误\n");
+			break;
+	}
+
+
+	//但是每个语句后面都要break，有些麻烦，可以精简一点
+	switch(day)
+	{
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+			printf("工作日\n");
+			break;
+		case 6:
+		case 7:
+			printf("休息日\n");
+			break;
+		default:
+		    printf("输入错误\n");
+			break;
+	}
+
+	//switch允许嵌套使用的，如：
+	int n=1;
+	int m=2;
+	switch(n)
+	{
+	case 1:
+		m++;
+	case 2:
+		n++;
+	case 3:
+		switch(n)
+		{
+		case 1:
+			n++;
+		case 2:
+			m++;
+			n++;
+			break;
+		}
+	case 4:
+		m++;
+		break;
+	default:
+		break;
+	}
+	printf("n=%d,m=%d",n,m);
+	return 0;
+}
