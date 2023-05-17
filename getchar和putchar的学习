@@ -1,0 +1,39 @@
+int main()
+{
+	//输入98
+	int ch=getchar();//int ch是因为getchar获取的是ascll 码 不是字符
+	putchar(ch);//9
+	printf("%c\n",ch);//9，换行
+	ch=getchar();
+	putchar(ch);//8
+
+
+	int ch=0;
+	//ctrl+z是输入文件终止符，ctrl+c是结束进程.
+	while((ch=getchar())!=EOF)//end-of-life,其值为-1
+	{
+		putchar(ch);
+	}
+
+
+
+
+
+	int ret=0;
+	char password[20]={0};
+	printf("输入密码");
+	scanf("%s",password);//ps:如若输入密码中含字符，则出现错误，因为scanf函数读到空格就结束了，空格符及后面的字符违背读取到。
+	printf("请确认（Y/N）：>");
+	getchar();
+	ret=getchar();
+	if(ret=='Y')
+		printf("确认成功");
+	else
+		printf("放弃确认");
+
+
+
+
+	
+	return 0;
+}
