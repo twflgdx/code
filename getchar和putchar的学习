@@ -22,7 +22,7 @@ int main()
 	int ret=0;
 	char password[20]={0};
 	printf("输入密码");
-	scanf("%s",password);//ps:如若输入密码中含字符，则出现错误，因为scanf函数读到空格就结束了，空格符及后面的字符违背读取到。
+	scanf("%s",password);//ps:如若输入密码中含空格，则出现错误，因为scanf函数读到空格就结束了，空格符及后面的字符未被读取到。所以密码中一般不给设置空格键
 	printf("请确认（Y/N）：>");
 	getchar();
 	ret=getchar();
@@ -33,7 +33,23 @@ int main()
 
 
 
+	//输入123456 ABCD 
+	int ret=0;
+	int ch=0;
+	char password[20]={0};
+	printf("请输入密码：>");
+	scanf("%s",password);//%s:输入字符串，将字符串送到一个字符数组中；数组不用取地址符号
+    while((ch=getchar())!='\n')//把数字后的空格键及字母给读取（消耗掉）
+	{
+		;
+	}
+	printf("请确认（Y/N):>");
+	ret=getchar();
+	if(ret=='Y')
+		printf("确认成功");
+	else
+		printf("放弃确认");
+	//printf("%s %s",password);
 
-	
 	return 0;
 }
