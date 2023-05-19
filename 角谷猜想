@@ -1,0 +1,82 @@
+# include<stdio.h>
+int main()
+{
+	long long i=0;
+	long long num=0;
+	long long n=0;
+	long long choice=0;
+	long long end=0;
+	long long first=0;
+	printf("说明：可输入数字为1/2/3\n");
+	printf("(1表示输入值\n 2表示从1到输入值\n 3表示从初始到结束值）\n");
+	printf("请选择:");
+	scanf("%d",&choice);
+	switch(choice)
+	{
+		case 1:
+			printf("输入数字:");
+	        scanf("%d",&num);
+	        for(n=0;num<1000000000000000;n++)
+	        {
+		         if(0==num%2)
+			          num=num/2;
+		         else if((1==num%2)&&(num!=1))
+			          num=3*num+1;
+		         else
+		         {
+			          printf("数字：%d  次数：%d",num,n);
+				      break;
+		         }
+	        }
+			break;
+		case 2://num表示每次计算值，i表示从1到end，n为次数，end表示末尾值(i应该可有num替代？）
+			printf("末尾值:");
+			scanf("%d",&end);
+			for(i=1;i<=end;i++)
+			{
+				
+	            for(n=0,num=i;num<1000000000000000000;n++)
+	            {
+		            if(0==num%2)
+			        num=num/2;
+		            else if((1==num%2)&&(num!=1))
+			        num=3*num+1;
+		            else
+		            {
+			        printf("数字：%d  次数：%d, ",i,n);
+					break;
+		            }
+				}
+			}
+			break;
+		case 3:
+			printf("初始值:");
+			scanf("%d",&first);
+			printf("末尾值:");
+			scanf("%d",&end);
+			for(i=first;i<=end;i++)
+			{
+				
+	            for(n=0,num=i;num<100000000000000000;n++)
+	            {
+		            if(0==num%2)
+			        num=num/2;
+		            else if((1==num%2)&&(num!=1))
+			        num=3*num+1;
+		            else
+		            {
+			        printf("数字：%d  次数：%d, ",i,n);
+					break;
+		            }
+				}
+			}
+			break;
+
+
+
+	}
+	
+	return 0;
+}
+
+//7*10^11
