@@ -1,0 +1,21 @@
+ //2023/05/22
+int main()
+{
+	int bei=0;
+	int chu;
+	int end;
+	scanf("%d",&end);
+	for(bei=2;bei<=end;bei++)
+	{
+		for(chu=2;chu<bei;chu++)
+		{
+			//if(bei==chu)
+				//printf("%d",bei);
+			 if(bei%chu==0)
+				break;
+			
+		}
+		if(bei%chu!=0||bei==chu)
+			printf("%d ",bei);
+	}
+	return 0;
