@@ -32,7 +32,7 @@ int main()
 		ret=ret*i;
 		sum=sum+ret;
 	}//n的阶乘
-	printf("ret=%d",ret);
+	printf("ret=%d",ret);//双长整型打印和输入控制格式符都得用%lld/u，13往上的阶乘得用long long类型，但也只能算到20的阶乘
 
 	printf("sum=%d",sum);//求和
 
